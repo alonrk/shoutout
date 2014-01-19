@@ -1,0 +1,24 @@
+.msg-container
+  .msg-container.text
+    %textarea.msg-container.text.text-area{"ng-model" => "messageData.text"}
+  %br
+  .msg-container.media
+    %table
+      %tr
+        %td.media-input
+          %button.media-input.btn{"ng-click" => "messageCtrl.attachPicture()"}
+            %img{:src => "images/icoImage.png"} 
+            Photo
+          %img.media-input.selected{"ng-src" => "{{messageCtrl.messageData.imageUrl}}"} 
+        %td.media-input 
+          %button.media-input.btn 
+            %img{:src => "images/icoVideo.png"} 
+            Video 
+          %img.media-input.selected{"ng-src" => "{{messageCtrl.messageData.videoUrl}}"} 
+        %td.media-input 
+          %button.media-input.btn 
+            %img{:src => "images/icoLink.png"} 
+            Link 
+          %img.media-input.selected{"ng-src" => "{{messageCtrl.messageData.linkUrl}}"}
+  %br
+  %button.next-btn{"ng-click" => "messageCtrl.next()"}Next   
