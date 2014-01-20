@@ -1,0 +1,21 @@
+.template-container
+  %h1 Message Preview
+  %h2 Select your template
+  .table1
+    .msg-preview
+      .msg-text {{messageData.text}}
+      %br
+      %img.msg-img{:src => "{{messageData.imageUrl}}"}
+      %br
+      %img.msg-img{:src => "{{messageData.videoUrl}}"}
+    .templates
+      %ul
+        %li option1
+        %li option2
+        %li option3
+  %br
+  %br
+  %button.prev-btn{"ng-click" => "prev()"}Prev   
+  %button.next-btn{"ng-click" => "next()"}Next   
+
+

@@ -2,16 +2,19 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $stateParams) {
-	this.messageData = {
-		text: '',
-		imageUrl: '',
-		videoUrl: '',
-		linkUrl: ''
-	};
-	
+shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $stateParams, $rootScope) {
+	if ($rootScope.messageData == undefined)
+	{
+		$rootScope.messageData = {
+			text: '',
+			imageUrl: '',
+			videoUrl: '',
+			linkUrl: ''
+		};
+	}
+		
 	// attach picture - TODO: change to media gallery
-	this.attachPicture = function() {
+	$scope.attachPicture = function() {
 	  filepicker.setKey('ATmAcdaDPTsytAm6ffOuwz');
       filepicker.pick({
           mimetypes: ['image/*'],
@@ -29,7 +32,7 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
         });
 	};
 	
-	this.next = function() {
-		$state.go('template');
+	$scope.next = function() {
+		$state.go('choose-template');
 	}
 });
