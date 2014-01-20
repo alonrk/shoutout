@@ -23,6 +23,11 @@ angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui
       		url: '/contcats',
       		templateUrl: 'views/contacts.html',
       		controller: 'ContactsCtrl'
+      	})
+      	.state('send', {
+      		url: '/send',
+      		templateUrl: 'views/send.html',
+      		controller: 'SendCtrl'
       	});
 	})
   	.run(function ($rootScope, $state, $stateParams, $log) {

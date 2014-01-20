@@ -5,18 +5,19 @@
   %button.next-btn{"ng-click" => "next()"}Next   
   %br
   %br
-  .table1
-    .templates
-      %ul
-        %li option1
-        %li option2
-        %li option3
-    .msg-preview
-      .msg-text {{messageData.text}}
-      %br
-      %img.msg-img{:src => "{{messageData.imageUrl}}"}
-      %br
-      %img.msg-img{:src => "{{messageData.videoUrl}}"}
+  %table.table1
+    %tr
+      %td.templates
+        %ul
+          %li option1
+          %li option2
+          %li option3
+      %td.msg-preview
+        .msg-text {{messageData.text}}
+        %br
+        %img.msg-img{:src => "{{messageData.imageUrl}}"}
+        %br
+        %img.msg-img{:src => "{{messageData.videoUrl}}"}
   %br
   %br
   %button.prev-btn{"ng-click" => "prev()"}Prev   
