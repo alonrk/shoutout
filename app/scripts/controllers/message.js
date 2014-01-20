@@ -3,7 +3,7 @@
 var shoutoutApp = angular.module('shoutoutApp');
 
 shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $stateParams, $rootScope) {
-	if ($rootScope.messageData == undefined)
+	if ($rootScope.messageData === undefined)
 	{
 		$rootScope.messageData = {
 			text: '',
@@ -34,5 +34,5 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 	
 	$scope.next = function() {
 		$state.go('choose-template');
-	}
+	};
 });

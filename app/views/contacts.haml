@@ -1,0 +1,16 @@
+.contacts-container
+  .add
+    %input.add.input{"ng-model" => "addedContacts"}
+    %button.add.btn{"ng-click" => "addContacts()"} Add
+  %br
+  %table.contacts
+    %tr.contact{"ng-repeat" => "contact in contacts"}
+      %td
+        %input{:type => "checkbox", "ng-model" => "contact.selected"}
+      %td{:style => "width: 150px"} {{contact.name}}
+      %td {{contact.email}}  
+  .paging{"ng-controller" => "PaginationCtrl"}
+    %pagination{"total-items" => "totalContacts", "page" => "currentPage"}
+  %br
+  %button.prev-btn{"ng-click" => "prev()"}Prev   
+  %button.next-btn{"ng-click" => "next()"}Next   

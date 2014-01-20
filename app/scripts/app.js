@@ -1,24 +1,29 @@
 'use strict';
 
-angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource'])
+angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui.bootstrap'])
   .config(function ($stateProvider, $urlRouterProvider) {
 
 	// For any unmatched url, redirect to /message
-  	$urlRouterProvider
-  		.when("/", "/message")
-  		.otherwise("/");
-  	
+	$urlRouterProvider
+		.when('/', '/message')
+		.otherwise('/');
+
     $stateProvider
-      .state('message', {
-      	url: '/message',
-        templateUrl: 'views/message.html',
-        controller: 'MessageCtrl'
-      })
-      .state('choose-template', {
-      	url: '/choose-template',
-      	templateUrl: 'views/choose-template.html',
-      	controller: 'TemplateCtrl'
-      });
+     	.state('message', {
+			url: '/message',
+			templateUrl: 'views/message.html',
+			controller: 'MessageCtrl'
+      	})
+		.state('choose-template', {
+      		url: '/choose-template',
+      		templateUrl: 'views/choose-template.html',
+      		controller: 'TemplateCtrl'
+      	})
+      	.state('contacts', {
+      		url: '/contcats',
+      		templateUrl: 'views/contacts.html',
+      		controller: 'ContactsCtrl'
+      	});
 	})
   	.run(function ($rootScope, $state, $stateParams, $log) {
 	    $rootScope.$state = $state;
