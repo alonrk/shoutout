@@ -2,33 +2,33 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('ContactsCtrl', function($scope, $state, $log) {
-	$scope.allSelected = false;
+shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log, Restangular) {
+	$rootScope.allSelected = false;
 	
-	$scope.contacts = [
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: false},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: false},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "alon", email: "alonrk@gmail.com", selected: true},
-		{name: "yuval", email: "yuvala@wix.com", selected: false}
-	];
+	var contactsApi = Restangular.one("contacts");
+	
+	if ($rootScope.contacts === undefined)
+	{
+		contactsApi.get().then(function(contacts) {
+			$rootScope.contacts = contacts; 
+		});
+	}
 	
 	$scope.selectAll = function() {
-		$scope.allSelected = !$scope.allSelected;
+		$rootScope.allSelected = !$rootScope.allSelected;
 		
-		$scope.contacts.forEach(function(contact) {
-			contact.selected = $scope.allSelected;
+		$rootScope.contacts.forEach(function(contact) {
+			contact.selected = $rootScope.allSelected;
 		});
 	};
 	
 	$scope.addContacts = function() {
-		$log.log('Adding contacts: ' + $scope.addedContacts);
+		contactsApi.post("", $scope.contactsToAdd).then(function(newContacts) {
+		  	newContacts.forEach(function(newContact) {
+		  		newContact.selecetd = false;
+		  		$rootScope.contacts.unshift(newContact);
+		  	});
+		});
 	};
 	
 	$scope.prev = function() {
