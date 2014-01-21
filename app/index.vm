@@ -7,6 +7,7 @@
     <title>ShoutOut</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="http://sslstatic.wix.com/services/js-sdk/1.24.0/js/Wix.js"></script>
     <script type="text/javascript">
       function ClientCtrl($rootScope) {
         function fixOrigin(url) {
@@ -48,7 +49,6 @@
       ga('send', 'pageview');
     </script>
 
-
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-i18n/angular-locale_${locale}.js"></script>
     <script src="scripts/locale/messages_${locale}.js"></script>
@@ -72,6 +72,7 @@
     <script src="scripts/controllers/template.js"></script>
     <script src="scripts/controllers/contacts.js"></script>
     <script src="scripts/controllers/send.js"></script>
+    <script src="scripts/controllers/landing.js"></script>
     <!-- endbuild -->
     
     <!-- #if (false) -->

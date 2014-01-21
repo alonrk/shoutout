@@ -4,12 +4,5 @@
     %input.sender-name{"ng-model" => "senderName"}
   %br
   %button.send-btn{"ng-click" => "send()"} Send
-  %br
-  .msg-preview
-    .msg-text {{messageData.text}}
-    %br
-    %img.msg-img{:src => "{{messageData.imageUrl}}"}
-    %br
-    %img.msg-img{:src => "{{messageData.videoUrl}}"}
   %br  
   %button.prev-btn{"ng-click" => "prev()"}Prev   

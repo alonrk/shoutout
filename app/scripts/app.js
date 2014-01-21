@@ -28,6 +28,15 @@ angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui
       		url: '/send',
       		templateUrl: 'views/send.html',
       		controller: 'SendCtrl'
+      	})
+      	.state('complete', {
+      		url: '/complete',
+      		templateUrl: 'views/complete.html'
+      	})
+      	.state('landing', {
+      		url: '/landing',
+      		templateUrl: 'views/landing.html',
+      		controller: 'LandingCtrl'
       	});
 	})
   	.run(function ($rootScope, $state, $stateParams, $log) {

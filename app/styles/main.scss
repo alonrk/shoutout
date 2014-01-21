@@ -157,6 +157,11 @@ $preview-height: 500px;
   }
 }
 
+.complete-container {
+  width: $container-width;
+  margin: auto;
+}
+
 .msg-preview {
   width: $preview-width;
   border: solid 1px;
