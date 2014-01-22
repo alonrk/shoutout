@@ -26,6 +26,10 @@ angular.module('shoutoutApp')
       			$scope.stepClass[3] = "step bold";
       			break;
       	}
+      	
+      	$scope.setState = function(state) {
+      		$state.go(state);
+      	};
       }
     };
   });
