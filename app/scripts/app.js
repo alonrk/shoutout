@@ -31,7 +31,8 @@ angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui
       	})
       	.state('complete', {
       		url: '/complete',
-      		templateUrl: 'views/complete.html'
+      		templateUrl: 'views/complete.html',
+      		controller: 'CompleteCtrl'
       	})
       	.state('landing', {
       		url: '/landing',

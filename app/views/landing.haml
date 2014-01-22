@@ -1,6 +1,8 @@
 .msg-preview
   .msg-text {{messageData.text}}
   %br
-  %img.msg-img{:src => "{{messageData.imageUrl}}"}
+  .img-div
+    %img.msg-img{:src => "{{messageData.imageUrl}}"}
   %br
-  %img.msg-img{:src => "{{messageData.videoUrl}}"}
+  .img-div
+    %img.msg-img{:src => "{{messageData.videoUrl}}"}
