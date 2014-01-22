@@ -1,0 +1,84 @@
+<!doctype html>
+<html ng-app="shoutoutApi">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="${clientTopology.shoutoutStaticsUrl}">
+    <title>ShoutOut</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript" src="http://sslstatic.wix.com/services/js-sdk/1.24.0/js/Wix.js"></script>
+    <script type="text/javascript">
+      function ClientCtrl($rootScope) {
+        function fixOrigin(url) {
+          if (url.indexOf('://www.') === -1) {
+            return url;
+          } else {
+            return url.replace(/:\/\/www\./g, '://' + window.location.host.substr(0, window.location.host.indexOf('.')) + '.');
+          }
+        }
+
+        $rootScope.clientConfig = {
+          apiUrl: fixOrigin('${clientTopology.shoutoutApiUrl}'),
+          partialsUrl: fixOrigin('${clientTopology.shoutoutPartialsUrl}')
+        };
+      }
+    </script>
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-controller="ClientCtrl">
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div><div class="container" ui-view></div></div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '${googleAnalytics}');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-i18n/angular-locale_${locale}.js"></script>
+    <script src="scripts/locale/messages_${locale}.js"></script>
+    <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+
+    <!-- build:js scripts/modules.js -->
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/message.js"></script>
+    <script src="scripts/controllers/template.js"></script>
+    <script src="scripts/controllers/contacts.js"></script>
+    <script src="scripts/controllers/send.js"></script>
+    <script src="scripts/controllers/complete.js"></script>
+    <script src="scripts/controllers/landing.js"></script>
+    <script src="scripts/directives/ruler.js"></script>
+    <!-- endbuild -->
+    
+    <!-- #if (false) -->
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="scripts/shoutoutApi.js"></script>
+    <!-- #end -->
+  </body>
+</html>

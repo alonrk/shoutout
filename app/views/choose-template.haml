@@ -1,0 +1,23 @@
+.template-container
+  %div{"so-ruler" => ''}
+  %h1 Message Preview
+  %h2 Select your template
+  %button.prev-btn{"ng-click" => "prev()"}Prev   
+  %button.next-btn{"ng-click" => "next()"}Next   
+  %br
+  %br
+  %table.table1
+    %tr
+      %td.templates
+        %ul
+          %li option1
+          %li option2
+          %li option3
+      %td
+        %div{"ng-include" => "'views/landing.html'"}
+  %br
+  %br
+  %button.prev-btn{"ng-click" => "prev()"}Prev   
+  %button.next-btn{"ng-click" => "next()"}Next   
+
+

@@ -1,0 +1,9 @@
+.send-container
+  %div{"so-ruler" => ''}
+  .sender-details 
+    Sender:
+    %input.sender-name{"ng-model" => "senderName"}
+  %br
+  %button.send-btn{"ng-click" => "send()"} Send
+  %br  
+  %button.prev-btn{"ng-click" => "prev()"}Prev   

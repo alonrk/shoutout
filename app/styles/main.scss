@@ -1,0 +1,224 @@
+/* Put your SASS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+// for ui.bootstrap
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+// constants
+$container-width: 600px;
+$preview-width: 400px;
+$preview-height: 500px;
+
+.msg-container {
+  width: $container-width;
+  margin: auto;
+  
+  .text {
+    display: block;
+    
+    .text-area {
+      height: 100px;
+      font-size: 12px;
+      border: 4px solid #64d257;
+      border-radius: 12px;      
+    }
+    
+    .text-area:focus {
+      border: 4px solid #64d257;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #64d257;
+    }
+  }
+  
+  .media {
+    margin-left: 10px;
+    
+    .media-input {
+      width: 100px;
+      padding: 0px;
+      margin: 0px;
+      vertical-align: top;
+      
+      .btn {
+        width: 67px;
+        height: 32px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        background-color: #efefef;
+        font-size: 12px;
+        color: #606060;
+        margin-left: 5px;
+        margin-top: 5px;
+        float: left;
+      }
+      
+      .selected {
+        width:67px; height:67px;
+        border-radius: 3px;
+        border-width: 2px;
+        margin-left: 5px;
+        margin-top: 5px;
+        float: left;
+        background-color: #eeeeee;
+      }
+    }
+  }
+}
+
+.template-container {
+  width: $container-width;
+  margin: auto;
+  
+  .table1 {
+    height: $preview-height;
+
+    .templates {
+      width: $container-width - $preview-width - 10px;
+      border: solid 1px;
+    }
+  }
+}
+
+.contacts-container {
+  width: $container-width;
+  margin: auto;
+  
+  .add {
+    width: 360px;
+    margin: auto;
+    
+    .input {
+      width: 300px;
+      height: 30px;
+    }
+    
+    .btn {
+      width: 50px;
+      height: 30px;
+    }
+  }
+  
+  .contacts {
+    margin: auto;
+    height: 200px;
+    width: 400px;
+    overflow: overlay;
+    
+    .contact {
+      display: block;
+      width: 380px;
+      padding: 4px;
+      line-height: 1;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);      
+    }
+  }
+
+  .paging {
+    margin: auto;
+    width: 400px;
+  }
+}
+
+.send-container {
+  width: $container-width;
+  margin: auto;
+  
+  .sender-details {
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    
+    .sender-name {
+      width: 180px;
+      height: 25px;
+    }
+  }
+  
+  .send-btn {
+    width: 50px;
+    height: 30px;
+    margin: auto;
+    display: block;
+  }
+}
+
+.complete-container {
+  width: $container-width;
+  margin: auto;
+}
+
+.msg-preview {
+  width: $preview-width;
+  border: solid 1px;
+  margin: auto;
+  
+  .msg-text {
+    height: 100px;
+  }
+  
+  .img-div {
+    width: 90%;
+    height: 200px;
+    margin: auto;
+    border: 2px solid;  
+
+    .msg-img {
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+      display: block;
+    }
+  }
+}
+    
+.next-btn {
+  float: right;
+  width: 80px;
+  height: 30px;
+  background-color: cornflowerblue;  
+}
+
+.prev-btn {
+  float: left;
+  width: 80px;
+  height: 30px;
+  background-color: cornflowerblue;  
+}
+
+.ruler {
+  width: $container-width - 40px;
+  height: 50px;
+  margin: auto;
+  
+  .step {
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 15px;
+    background: #fff;
+  }
+  
+  .bold {
+   border-width: 3px;
+   border-color: #f00; 
+  }
+  
+  .line {
+    width: 125px;
+    display: inline-table;
+    border-style: solid;
+    margin-left: -4px;
+    margin-right: -4px;
+    margin-bottom: 3px;    
+  }
+}
