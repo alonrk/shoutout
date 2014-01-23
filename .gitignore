@@ -17,3 +17,6 @@ target
 *.class
 *.pyc
 *.pyo
+.idea
+lib
+maven
