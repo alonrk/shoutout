@@ -12,9 +12,13 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 			linkUrl: ''
 		};
 	}
+	
+	$scope.imageInput = 'none';
+	$scope.videoInput = 'none';
+	$scope.linkInput = 'none';
 		
 	// attach picture - TODO: change to media gallery
-	$scope.attachPicture = function() {
+	$scope.attachPhoto = function() {
 	  filepicker.setKey('ATmAcdaDPTsytAm6ffOuwz');
       filepicker.pick({
           mimetypes: ['image/*'],
@@ -22,6 +26,7 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
           services:['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'WEBCAM']
         },
         function(inkBlob){
+          $scope.imageInput = 'added';
           $log.info('attachePicture: ' + inkBlob.url);
           $scope.messageData.imageUrl = inkBlob.url;
           $scope.$digest();
@@ -30,6 +35,22 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
           //console.log(FPError.toString());
           $log.info('attachPicture: ' + FPError.toString());
         });
+	};
+
+	// attach video
+	$scope.attachVideo = function() {
+		
+	};
+	
+	// remove photo
+	$scope.removePhoto = function() {
+		$scope.imageInput = 'none';
+		$scope.messageData.imageUrl = '';
+	};
+	
+	// remove video
+	$scope.removeVideo = function() {
+		
 	};
 	
 	$scope.next = function() {

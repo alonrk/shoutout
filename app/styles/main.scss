@@ -4,16 +4,16 @@ html, body {
 }
 
 body {
-    background: #fff;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  background: #fff;
+  font-family: "Helvetica Neue";
+  color: #333;
 }
 
 // for ui.bootstrap
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 // constants
-$container-width: 500px;
+$container-width: 665px;
 $preview-width: 400px;
 $preview-height: 500px;
 
@@ -58,6 +58,7 @@ $preview-height: 500px;
         margin-left: 5px;
         margin-top: 5px;
         float: left;
+        cursor: pointer;
       }
       
       .selected {
@@ -72,6 +73,34 @@ $preview-height: 500px;
     }
   }
 }
+
+.cropped-img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.close {
+  float: right;
+  line-height: 1;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+button.close {
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+  -webkit-appearance: none;
+}
+
 
 .template-container {
   width: $container-width;
@@ -196,25 +225,25 @@ $preview-height: 500px;
 }
 
 .ruler {
-  width: 600px;
-  height: 50px;
+  width: 675px;
   margin: auto;
+  color: #cfcfcf;
   
   .step {
-    width: 30px;
-    height: 30px;
-    border: 1px solid;
-    border-radius: 15px;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #cfcfcf;
+    border-radius: 17.5px;
     background: #fff;
   }
   
-  .bold {
-   border-width: 3px;
-   border-color: #f00; 
+  .current {
+    border-width: 3px;
+    border-color: #000; 
   }
   
   .line {
-    width: 26%;
+    width: 175px;
     display: inline-table;
     border-style: solid;
     margin-left: -4px;
@@ -222,3 +251,29 @@ $preview-height: 500px;
     margin-bottom: 3px;    
   }
 }
+
+.ruler-titles {
+  margin: auto;
+  width: 750px;
+  margin-top: 12px;
+  color: #cfcfcf;
+
+  .step {
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 110px;
+    margin: auto;
+  }
+    
+  .step-last {
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 10px;
+    margin: auto;
+  }
+  
+  .current {
+    color: #000;
+  }
+}
+

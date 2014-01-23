@@ -13,17 +13,17 @@ angular.module('shoutoutApp')
       	switch ($state.current.name)
       	{
       		case 'message':
-      			$scope.stepClass[0] = "step bold";
+      			$scope.stepClass[0] = "step current";
       			break;
       		case 'choose-template':
-      			$scope.stepClass[1] = "step bold";
+      			$scope.stepClass[1] = "step current";
       			break;
       		case 'contacts':
-      			$scope.stepClass[2] = "step bold";
+      			$scope.stepClass[2] = "step current";
       			break;
       		case 'send':
       		case 'complete':
-      			$scope.stepClass[3] = "step bold";
+      			$scope.stepClass[3] = "step current";
       			break;
       	}
       	
