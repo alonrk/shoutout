@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="shoutoutApi">
+<html ng-app="shoutoutApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,7 +78,10 @@
     
     <!-- #if (false) -->
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-    <script src="scripts/shoutoutApi.js"></script>
+    <script src="scripts/shoutoutServerMock.js"></script>
+    <script>
+    	angular.module('shoutoutApp').requires.push('shoutoutServerMock');
+    </script>
     <!-- #end -->
   </body>
 </html>
