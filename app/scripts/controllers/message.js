@@ -54,6 +54,6 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 	};
 	
 	$scope.next = function() {
-		$state.go('choose-template');
+		$state.go('choose-style');
 	};
 });

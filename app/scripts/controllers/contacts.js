@@ -32,7 +32,7 @@ shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log
 	};
 	
 	$scope.prev = function() {
-		$state.go('choose-template');
+		$state.go('choose-style');
 	};
 	
 	$scope.next = function() {

@@ -15,7 +15,7 @@ angular.module('shoutoutApp')
       		case 'message':
       			$scope.stepClass[0] = "step current";
       			break;
-      		case 'choose-template':
+      		case 'choose-style':
       			$scope.stepClass[1] = "step current";
       			break;
       		case 'contacts':

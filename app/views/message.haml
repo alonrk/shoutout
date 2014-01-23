@@ -1,28 +1,27 @@
+.h1 Connect with customers and drive traffic to your site
 %div{"so-ruler" => ''}
+.h2 Use text, images, videos & links to create your Shoutout
 .msg-container
   .msg-container.text
     %textarea.msg-container.text.text-area{"ng-model" => "messageData.text"}
-  %br
   .msg-container.media
-    %table
-      %tr
-        %td.media-input{"ng-switch" => "imageInput"}
-          %button.media-input.btn{"ng-click" => "attachPhoto()", "ng-switch-when" => 'none'}
-            %img{:src => "images/icoImage.png"} 
-            Photo
-          .selected{"ng-switch-when" => 'added'}
-            %img.cropped-img{"ng-src" => "{{messageData.imageUrl}}"}
-            %button.close{:type => "button", "ng-click" => "removePhoto()"} 
-        %td.media-input{"ng-switch" => "videoInput"} 
-          %button.media-input.btn{"ng-click" => "attachVideo()", "ng-switch-when" => 'none'} 
-            %img{:src => "images/icoVideo.png"} 
-            Video
-          .selected{"ng-switch-when" => 'added'}   
-            %img.media-input.selected{"ng-src" => "{{messageData.videoUrl}}"}
-            %button.close-btn{"ng-click" => "removeVideo()"} 
-        %td.media-input 
-          %button.media-input.btn 
-            %img{:src => "images/icoLink.png"} 
-            Link 
-          %img.media-input.selected{"ng-src" => "{{messageData.linkUrl}}"}
-        %button.next-btn{"ng-click" => "next()"}Next   
+    .media-input{"ng-switch" => "imageInput"}
+      %button.media-input.btn{"ng-click" => "attachPhoto()", "ng-switch-when" => 'none'}
+        %img{:src => "images/icoImage.png"} 
+        Photo
+      .selected{"ng-switch-when" => 'added'}
+        %img.cropped-img{"ng-src" => "{{messageData.imageUrl}}"}
+        %button.close{:type => "button", "ng-click" => "removePhoto()"} 
+    .media-input{"ng-switch" => "videoInput"} 
+      %button.media-input.btn{"ng-click" => "attachVideo()", "ng-switch-when" => 'none'} 
+        %img{:src => "images/icoVideo.png"} 
+        Video
+      .selected{"ng-switch-when" => 'added'}   
+        %img.media-input.selected{"ng-src" => "{{messageData.videoUrl}}"}
+        %button.close-btn{"ng-click" => "removeVideo()"} 
+    .media-input 
+      %button.media-input.btn 
+        %img{:src => "images/icoLink.png"} 
+        Link 
+      %img.media-input.selected{"ng-src" => "{{messageData.linkUrl}}"}
+    %button.next-btn{"ng-click" => "next()"}Next   

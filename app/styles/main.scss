@@ -17,58 +17,70 @@ $container-width: 665px;
 $preview-width: 400px;
 $preview-height: 500px;
 
+.h1 {
+  font-size: 30px;
+  color: #7c7c7c;
+  margin: auto;
+  padding-top: 55px;
+  padding-bottom: 50px;
+  display: table;
+}
+
+.h2 {
+  font-size: 20px;
+  font-weight: light;
+  color: #373737;
+  margin: auto;
+  padding-top: 57px;
+  padding-bottom: 12px;
+  display: table;
+}
+
 .msg-container {
   width: $container-width;
   margin: auto;
   
   .text {
     display: block;
+    height: 217px;
+    border: 1px solid #0099ff;
+    border-radius: 3px;
+    margin-bottom: 20px;
     
     .text-area {
-      height: 200px;
-      font-size: 12px;
-      border: 4px solid #64d257;
-      border-radius: 12px;      
+      width: $container-width - 40px;
+      height: 217px - 40px;
+      border: 0;
+      padding: 20px;
+      font-size: 16px;
     }
+  }
     
-    .text-area:focus {
-      border: 4px solid #64d257;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #64d257;
-    }
+  .text:focus {
+  //  border: 2px solid #00f;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #64d257;
   }
   
   .media {
-    margin-left: 10px;
-    
     .media-input {
-      width: 100px;
-      padding: 0px;
-      margin: 0px;
-      vertical-align: top;
-      
+      width: 85px;
+      vertical-align: center;
+      border-radius: 3px;
+      border: 1px solid #cfcfcf;
+      background-color: #fff;
+      margin-right: 8px;
+      display: inline-table;
+
       .btn {
-        width: 67px;
-        height: 32px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        background-color: #efefef;
+        height: 36px;
         font-size: 12px;
-        color: #606060;
-        margin-left: 5px;
-        margin-top: 5px;
-        float: left;
+        color: #373737;
         cursor: pointer;
+        margin: 0;
       }
       
       .selected {
-        width:67px; height:67px;
-        border-radius: 3px;
-        border-width: 2px;
-        margin-left: 5px;
-        margin-top: 5px;
-        float: left;
-        background-color: #eeeeee;
+        height: 85px;
       }
     }
   }
@@ -102,7 +114,7 @@ button.close {
 }
 
 
-.template-container {
+.style-container {
   width: $container-width;
   margin: auto;
   
@@ -225,55 +237,51 @@ button.close {
 }
 
 .ruler {
-  width: 675px;
+  width: 840px;
   margin: auto;
   color: #cfcfcf;
   
   .step {
-    width: 35px;
-    height: 35px;
-    border: 2px solid #cfcfcf;
-    border-radius: 17.5px;
-    background: #fff;
+    width: 210px;
+    display: table-cell;
+    
+    .btn {
+      width: 35px;
+      height: 35px;
+      border: 2px solid #cfcfcf;
+      border-radius: 17.5px;
+      background: #fff;
+      margin: auto;
+      display: table;
+      cursor: pointer;
+      
+      &:focus {
+        border-radius: 17.5px;
+      }
+    }
+
+    .title {
+      padding-top: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: auto;
+      display: table;
+    }
   }
-  
+
   .current {
-    border-width: 3px;
-    border-color: #000; 
-  }
-  
-  .line {
-    width: 175px;
-    display: inline-table;
-    border-style: solid;
-    margin-left: -4px;
-    margin-right: -4px;
-    margin-bottom: 3px;    
-  }
-}
+    color: #000; 
 
-.ruler-titles {
-  margin: auto;
-  width: 750px;
-  margin-top: 12px;
-  color: #cfcfcf;
-
-  .step {
-    font-size: 14px;
-    font-weight: bold;
-    padding-right: 110px;
-    margin: auto;
+    .btn {
+      border-color: #000;
+    }
   }
     
-  .step-last {
-    font-size: 14px;
-    font-weight: bold;
-    padding-right: 10px;
+  .line {
+    width: 630px;
+    border-style: solid;
     margin: auto;
-  }
-  
-  .current {
-    color: #000;
+    margin-bottom: -17.5px;
   }
 }
 

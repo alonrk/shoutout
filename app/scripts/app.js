@@ -14,9 +14,9 @@ angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui
 			templateUrl: 'views/message.html',
 			controller: 'MessageCtrl'
       	})
-		.state('choose-template', {
-      		url: '/choose-template',
-      		templateUrl: 'views/choose-template.html',
+		.state('choose-style', {
+      		url: '/choose-style',
+      		templateUrl: 'views/choose-style.html',
       		controller: 'TemplateCtrl'
       	})
       	.state('contacts', {
