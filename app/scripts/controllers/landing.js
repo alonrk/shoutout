@@ -2,9 +2,12 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('LandingCtrl', function($scope, $rootScope, $state, $log, Restangular) {
+shoutoutApp.controller('LandingCtrl', function($scope, $rootScope, $state, $stateParams, $log, Restangular) {
 	var messageApi = Restangular.one('message');
-	messageApi.get().then(function(message) {
+	var params = $stateParams;
+	$log.log("params: " + params);
+	
+	messageApi.get({id: params.id}).then(function(message) {
 		$rootScope.messageData = message;
 	});
 });
