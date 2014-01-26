@@ -9,5 +9,12 @@ shoutoutApp.controller('LandingCtrl', function($scope, $rootScope, $state, $stat
 	
 	messageApi.get({id: params.id}).then(function(message) {
 		$rootScope.messageData = message;
+		
+		if ($rootScope.messageData.youtubeId)
+		{
+			angular.element().ready(function() {
+				document.getElementById('youtubeDiv').innerHTML = "<iframe id='ytplayer' src='https://www.youtube.com/v/" + $rootScope.messageData.youtubeId + "' width='400' height='300'/>";
+			});
+		}
 	});
 });

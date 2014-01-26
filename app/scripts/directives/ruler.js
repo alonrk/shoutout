@@ -7,7 +7,7 @@ angular.module('shoutoutApp')
       controller: function($scope, $state, $log) {
       	$log.log('state: ' + $state.current.name);
       	$scope.stepClass = [
-      		'step', 'step', 'step', 'step'
+      		'ruler-step', 'ruler-step', 'ruler-step', 'ruler-step'
       	];
       	$scope.stepValue = [
       		1, 2, 3, 4
@@ -16,29 +16,29 @@ angular.module('shoutoutApp')
       	switch ($state.current.name)
       	{
       		case 'message':
-      			$scope.stepClass[0] = 'step current';
+      			$scope.stepClass[0] += ' ruler-current';
       			break;
       		case 'choose-style':
-      			$scope.stepClass[1] = 'step current';
-      			$scope.stepClass[0] = 'step complete';
-      			$scope.stepValue[0] = '';
+      			$scope.stepClass[1] += ' ruler-current';
+      			$scope.stepClass[0] += ' ruler-complete';
+      			$scope.stepValue[0] = '.';
       			break;
       		case 'contacts':
-      			$scope.stepClass[2] = 'step current';
-      			$scope.stepClass[1] = 'step complete';
-      			$scope.stepClass[0] = 'step complete';
-      			$scope.stepValue[1] = '';
-      			$scope.stepValue[0] = '';
+      			$scope.stepClass[2] += ' ruler-current';
+      			$scope.stepClass[1] += ' ruler-complete';
+      			$scope.stepClass[0] += ' ruler-complete';
+      			$scope.stepValue[1] = '.';
+      			$scope.stepValue[0] = '.';
       			break;
       		case 'send':
       		case 'complete':
-      			$scope.stepClass[3] = 'step current';
-      			$scope.stepClass[2] = 'step complete';
-      			$scope.stepClass[1] = 'step complete';
-      			$scope.stepClass[0] = 'step complete';
-      			$scope.stepValue[2] = '';
-      			$scope.stepValue[1] = '';
-      			$scope.stepValue[0] = '';
+      			$scope.stepClass[3] += ' ruler-current';
+      			$scope.stepClass[2] += ' ruler-complete';
+      			$scope.stepClass[1] += ' ruler-complete';
+      			$scope.stepClass[0] += ' ruler-complete';
+      			$scope.stepValue[2] = '.';
+      			$scope.stepValue[1] = '.';
+      			$scope.stepValue[0] = '.';
       			break;
       	}
       	

@@ -12,13 +12,13 @@
         %img.cropped-img{"ng-src" => "{{messageData.imageUrl}}"}
         %button.close{:type => "button", "ng-click" => "removePhoto()"} 
     .media-input{"ng-switch" => "videoInput"} 
-      %button.btn.bg-vid{"ng-click" => "attachVideo()", "ng-switch-when" => 'none'} 
+      %button.btn.bg-vid{"ng-click" => "attachVideo()", "ng-switch-when" => 'none', "bs-popover" => '', "data-placement" => "bottom-left", "data-template" => "views/media_popover.html"} 
         Video
       .selected{"ng-switch-when" => 'added'}   
-        %img.media-input.selected{"ng-src" => "{{messageData.videoUrl}}"}
+        %img.cropped-img{"ng-src" => "{{messageData.videoThumb}}"}
         %button.close-btn{"ng-click" => "removeVideo()"} 
     .media-input 
       %button.btn.bg-link 
         Link 
-      %img.media-input.selected{"ng-src" => "{{messageData.linkUrl}}"}
+      %img.selected{"ng-src" => "{{messageData.linkUrl}}"}
     %button.next-btn{"ng-click" => "next()"}Next   

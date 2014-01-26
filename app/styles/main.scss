@@ -1,3 +1,5 @@
+@import 'bootstrap';
+
 /* Put your SASS here */
 html, body {
   margin: 20px;
@@ -64,12 +66,11 @@ $preview-height: 500px;
   .media {
     .media-input {
       width: 85px;
-      vertical-align: center;
       border-radius: 3px;
-      border: 1px solid #cfcfcf;
       background-color: #fff;
       margin-right: 8px;
-      display: inline-table;
+      display: inline-block;
+      vertical-align: top;
 
       .btn {
         width: 100%;
@@ -79,7 +80,7 @@ $preview-height: 500px;
         cursor: pointer;
         margin: 0;
         padding-left: 38px;
-        border: 0;
+        border: 1px solid #cfcfcf;
         text-align: left;
       }
 
@@ -257,11 +258,11 @@ button.close {
   margin: auto;
   color: #cfcfcf;
   
-  .step {
+  .ruler-step {
     width: 210px;
     display: table-cell;
     
-    .btn {
+    .step-btn {
       width: 35px;
       height: 35px;
       color: #cfcfcf; 
@@ -278,7 +279,7 @@ button.close {
       }
     }
 
-    .title {
+    .step-title {
       padding-top: 12px;
       font-size: 14px;
       font-weight: bold;
@@ -287,20 +288,20 @@ button.close {
     }
   }
 
-  .current {
+  .ruler-current {
     color: #969696; 
 
-    .btn {
+    .step-btn {
       color: #969696; 
       border-color: #969696;
       font-size: 16px;
     }
   }
   
-  .complete {
+  .ruler-complete {
     color: #ff0000;
     
-    .btn {
+    .step-btn {
       border-color: #ff0000;
       background: #fff url('/images/stepFinishedIc.png') no-repeat center center;
     }

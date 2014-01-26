@@ -8,14 +8,18 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 		$rootScope.messageData = {
 			text: '',
 			imageUrl: '',
-			videoUrl: '',
+			youtubeId: '',
 			linkUrl: ''
 		};
 	}
 	
-	$scope.imageInput = 'none';
-	$scope.videoInput = 'none';
-	$scope.linkInput = 'none';
+	if (!$rootScope.imageInput) {
+		$rootScope.imageInput = 'none';
+		$rootScope.videoInput = 'none';
+		$rootScope.linkInput = 'none';
+	}
+		
+	$scope.mediaLink = null;
 		
 	// attach picture - TODO: change to media gallery
 	$scope.attachPhoto = function() {
@@ -26,10 +30,10 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
           services:['COMPUTER', 'FACEBOOK', 'INSTAGRAM', 'WEBCAM']
         },
         function(inkBlob){
-          $scope.imageInput = 'added';
+          $rootScope.imageInput = 'added';
           $log.info('attachePicture: ' + inkBlob.url);
-          $scope.messageData.imageUrl = inkBlob.url;
-          $scope.$digest();
+          $rootScope.messageData.imageUrl = inkBlob.url;
+          $rootScope.$digest();
         },
         function(FPError){
           //console.log(FPError.toString());
@@ -39,7 +43,18 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 
 	// attach video
 	$scope.attachVideo = function() {
-		
+		$scope.mediaLink = {
+			value: 'Insert YouTube link:',
+			click: function() {
+				var url = $scope.mediaLink.value;
+				$rootScope.messageData.youtubeId = getYoutubeID(url);
+				if ($rootScope.messageData.youtubeId)
+				{
+					$rootScope.videoInput = 'added';
+					$rootScope.messageData.videoThumb = 'http://i.ytimg.com/vi/'+$rootScope.messageData.youtubeId+'/mqdefault.jpg';
+				} 	
+			}
+		};
 	};
 	
 	// remove photo
@@ -56,4 +71,11 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
 	$scope.next = function() {
 		$state.go('choose-style');
 	};
+	
+	// helpers
+	function getYoutubeID(url) {
+  	  	var id = url.match('[\\?&]v=([^&#]*)');
+    	id = id[1];
+    	return id;
+   	};
 });

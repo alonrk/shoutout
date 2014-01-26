@@ -1,6 +1,13 @@
 'use strict';
 
-angular.module('shoutoutApp', ['wixTranslations', 'ui.router', 'ngResource', 'ui.bootstrap', 'restangular'])
+angular.module('shoutoutApp', [
+	'wixTranslations', 
+	'ui.router', 
+	'ngResource', 
+	//'ui.bootstrap',
+	'mgcrea.ngStrap', 
+	'restangular'
+	])
   .config(function ($stateProvider, $urlRouterProvider) {
 
 	// For any unmatched url, redirect to /message

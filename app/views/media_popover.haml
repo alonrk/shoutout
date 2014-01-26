@@ -1,0 +1,5 @@
+.popover
+  .arrow
+  .popover-content{:style => "display: flex"}
+    %input{:style => "width: 200px; height: 20px;", "ng-model" => "mediaLink.value"}
+    %button.btn-primary{:type => "button", "ng-click" => "mediaLink.click(); $hide()"} Done    

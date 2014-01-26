@@ -2,7 +2,14 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('TemplateCtrl', function ($scope, $log, $state) {
+shoutoutApp.controller('TemplateCtrl', function ($rootScope, $scope, $log, $state) {
+	if ($rootScope.messageData)
+	{
+		angular.element().ready(function() {
+			document.getElementById('youtubeDiv').innerHTML = "<iframe id='ytplayer' src='https://www.youtube.com/v/" + $rootScope.messageData.youtubeId + "' width='400' height='300'/>";
+		});
+	}
+
 	$scope.prev = function() {
 		$state.go('message');
 	};

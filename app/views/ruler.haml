@@ -1,18 +1,18 @@
 .ruler
   %hr.line
-  .step{:class => '{{stepClass[0]}}'}
-    %button.btn{"ng-click" => "setState('message')", :type => 'button'}
+  .ruler-step{:class => '{{stepClass[0]}}'}
+    %button.step-btn{"ng-click" => "setState('message')", :type => 'button'}
       %span {{stepValue[0]}}
-    .title Write a message
+    .step-title Write a message
   .step{:class => '{{stepClass[1]}}'}
-    %button.btn{"ng-click" => "setState('choose-style')", :type => 'button'}
+    %button.step-btn{"ng-click" => "setState('choose-style')", :type => 'button'}
       %span {{stepValue[1]}}
-    .title Choose a style
+    .step-title Choose a style
   .step{:class => '{{stepClass[2]}}'}
-    %button.btn{"ng-click" => "setState('contacts')", :type => 'button'}
+    %button.step-btn{"ng-click" => "setState('contacts')", :type => 'button'}
       %span {{stepValue[2]}}
-    .title Add contacts
+    .step-title Add contacts
   .step{:class => '{{stepClass[3]}}'}
-    %button.btn{"ng-click" => "setState('send')", :type => 'button'}
+    %button.step-btn{"ng-click" => "setState('send')", :type => 'button'}
       %span {{stepValue[3]}}
-    .title Shoutout
+    .step-title Shoutout
