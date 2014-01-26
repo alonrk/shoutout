@@ -72,16 +72,32 @@ $preview-height: 500px;
       display: inline-table;
 
       .btn {
+        width: 100%;
         height: 36px;
         font-size: 12px;
         color: #373737;
         cursor: pointer;
         margin: 0;
+        padding-left: 38px;
+        border: 0;
+        text-align: left;
       }
-      
+
       .selected {
         height: 85px;
       }
+    }
+
+    .bg-pic {
+      background: url('/images/picIc.png') no-repeat 10px center;
+    }
+
+    .bg-vid {
+      background: url('/images/vidIc.png') no-repeat 10px center;
+    }
+    
+    .bg-link {
+      background: url('/images/linkIc.png') no-repeat 10px center;
     }
   }
 }
@@ -248,12 +264,14 @@ button.close {
     .btn {
       width: 35px;
       height: 35px;
+      color: #cfcfcf; 
       border: 2px solid #cfcfcf;
       border-radius: 17.5px;
       background: #fff;
       margin: auto;
       display: table;
       cursor: pointer;
+      font-size: 16px;
       
       &:focus {
         border-radius: 17.5px;
@@ -270,10 +288,21 @@ button.close {
   }
 
   .current {
-    color: #000; 
+    color: #969696; 
 
     .btn {
-      border-color: #000;
+      color: #969696; 
+      border-color: #969696;
+      font-size: 16px;
+    }
+  }
+  
+  .complete {
+    color: #ff0000;
+    
+    .btn {
+      border-color: #ff0000;
+      background: #fff url('/images/stepFinishedIc.png') no-repeat center center;
     }
   }
     

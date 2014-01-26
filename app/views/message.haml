@@ -6,22 +6,19 @@
     %textarea.msg-container.text.text-area{"ng-model" => "messageData.text"}
   .msg-container.media
     .media-input{"ng-switch" => "imageInput"}
-      %button.media-input.btn{"ng-click" => "attachPhoto()", "ng-switch-when" => 'none'}
-        %img{:src => "images/icoImage.png"} 
+      %button.btn.bg-pic{"ng-click" => "attachPhoto()", "ng-switch-when" => 'none'}
         Photo
       .selected{"ng-switch-when" => 'added'}
         %img.cropped-img{"ng-src" => "{{messageData.imageUrl}}"}
         %button.close{:type => "button", "ng-click" => "removePhoto()"} 
     .media-input{"ng-switch" => "videoInput"} 
-      %button.media-input.btn{"ng-click" => "attachVideo()", "ng-switch-when" => 'none'} 
-        %img{:src => "images/icoVideo.png"} 
+      %button.btn.bg-vid{"ng-click" => "attachVideo()", "ng-switch-when" => 'none'} 
         Video
       .selected{"ng-switch-when" => 'added'}   
         %img.media-input.selected{"ng-src" => "{{messageData.videoUrl}}"}
         %button.close-btn{"ng-click" => "removeVideo()"} 
     .media-input 
-      %button.media-input.btn 
-        %img{:src => "images/icoLink.png"} 
+      %button.btn.bg-link 
         Link 
       %img.media-input.selected{"ng-src" => "{{messageData.linkUrl}}"}
     %button.next-btn{"ng-click" => "next()"}Next   
