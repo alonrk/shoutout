@@ -216,17 +216,17 @@ button.close {
 }
 
 .msg-preview {
-  width: $preview-width;
+  width: 100%;
   border: solid 1px;
   margin: auto;
   
   .msg-text {
-    height: 100px;
+    height: auto;
   }
   
   .img-div {
     width: 90%;
-    height: 200px;
+    height: auto;
     margin: auto;
     border: 2px solid;  
 
@@ -299,10 +299,10 @@ button.close {
   }
   
   .ruler-complete {
-    color: #ff0000;
+    color: #6bb445;
     
     .step-btn {
-      border-color: #ff0000;
+      border-color: #6bb445;
       background: #fff url('/images/stepFinishedIc.png') no-repeat center center;
     }
   }

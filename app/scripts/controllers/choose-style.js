@@ -6,7 +6,7 @@ shoutoutApp.controller('TemplateCtrl', function ($rootScope, $scope, $log, $stat
 	if ($rootScope.messageData)
 	{
 		angular.element().ready(function() {
-			document.getElementById('youtubeDiv').innerHTML = "<iframe id='ytplayer' src='https://www.youtube.com/v/" + $rootScope.messageData.youtubeId + "' width='400' height='300'/>";
+			document.getElementById('youtubeDiv').innerHTML = "<iframe id='ytplayer' src='https://www.youtube.com/v/" + $rootScope.messageData.youtubeId + "' width='100%' height='300'/>";
 		});
 	}
 
