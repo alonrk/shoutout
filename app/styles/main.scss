@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'wix';
 
 /* Put your SASS here */
 html, body {
@@ -16,8 +17,8 @@ body {
 
 // constants
 $container-width: 665px;
-$preview-width: 400px;
-$preview-height: 500px;
+$preview-width: 500px;
+$preview-height: 735px;
 
 .h1 {
   font-size: 30px;
@@ -32,7 +33,6 @@ $preview-height: 500px;
   font-size: 20px;
   font-weight: light;
   color: #373737;
-  margin: auto;
   padding-top: 57px;
   padding-bottom: 12px;
   display: table;
@@ -139,8 +139,20 @@ button.close {
     height: $preview-height;
 
     .templates {
-      width: $container-width - $preview-width - 10px;
-      border: solid 1px;
+      width: $container-width - $preview-width - 30px;
+      border: 1px solid #cfcfcf;
+      border-radius: 3px;
+      display: inline-block;
+      margin-right: 15px;
+    }
+    
+    .preview {
+      width: $preview-width;
+      //border: 1px solid #cfcfcf;
+      border-radius: 9px;
+      box-shadow: 0px 0px 5px 0px #000;
+      vertical-align: top;
+      display: inline-block;
     }
   }
 }
@@ -215,20 +227,23 @@ button.close {
   margin: auto;
 }
 
-.msg-preview {
+.landing {
   width: 100%;
-  border: solid 1px;
-  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
   
   .msg-text {
+    width: 90%;
     height: auto;
+    max-height: 200px;
+    margin: auto;
   }
   
   .img-div {
     width: 90%;
     height: auto;
+    max-height: 300px;
     margin: auto;
-    border: 2px solid;  
 
     .msg-img {
       max-width: 100%;
@@ -239,18 +254,25 @@ button.close {
   }
 }
     
+.buttons {
+  padding-top: 20px;
+  height: 70px; 
+}
+
 .next-btn {
+  @extend .wixBlueButton;
+  
   float: right;
-  width: 80px;
-  height: 30px;
-  background-color: cornflowerblue;  
+  cursor: pointer;
 }
 
 .prev-btn {
   float: left;
-  width: 80px;
-  height: 30px;
-  background-color: cornflowerblue;  
+  padding: 10px 20px 10px 20px;
+  border: 0;
+  background: 0;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .ruler {

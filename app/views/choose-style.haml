@@ -1,21 +1,15 @@
-.h1 Message Preview
+.h1 Connect with customers and drive traffic to your site
 %div{"so-ruler" => ''}
-.h2 Select your template
 .style-container
-  %button.prev-btn{"ng-click" => "prev()"}Prev   
-  %button.next-btn{"ng-click" => "next()"}Next   
-  %br
-  %br
-  %table.table1
-    %tr
-      %td.templates
-        %ul
-          %li option1
-          %li option2
-          %li option3
-      %td{:style => "vertical-align: top"}
-        %div{"ng-include" => "'views/landing.html'"}
-  %br
-  %br
-  %button.prev-btn{"ng-click" => "prev()"}Prev   
-  %button.next-btn{"ng-click" => "next()"}Next   
+  .h2 Choose a style for your ShoutOut
+  .table1
+    .templates
+      %ul
+        %li option1
+        %li option2
+        %li option3
+    .preview
+      %div{"ng-include" => "'views/landing.html'"}
+  .buttons
+    %button.prev-btn{"ng-click" => "prev()"}Back   
+    %button.next-btn{"ng-click" => "next()"}Next   
