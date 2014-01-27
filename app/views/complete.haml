@@ -1,10 +1,17 @@
+.h1 Connect with customers and drive traffic to your site
 %div{"so-ruler" => ''}
 .complete-container
-  Message sent successfuly
-  %br
-  Message URL: 
-  %a{:href => 'http://localhost:9000/#/landing?id={{messageId}}'} http://localhost:9000/#/landing?id={{messageId}}
-  %br
-  %br
-  %button.prev-btn{"ng-click" => "prev()"}Prev   
-  %button.next-btn{"ng-click" => "startOver()"}Start Over   
+  .success Success!
+  .h2{:style => "margin: auto; padding-top: 25px"} Your ShoutOut was successfully delivered to {{validEmails}} out of {{selectedContacts}}.
+  .did-not-receive{"ng-show" => "invalidEmails != null"}
+    Error: 
+    %span{:style => "color: #ed5262"} {{invalidEmails}} 
+    did not receive the ShoutOut
+  .shoutout-link
+    View your ShoutOut 
+    %a.link{:href => "{{shoutoutUrl}}"} {{shoutoutUrl}}
+  %div{:style => "margin-top: 95px; vertical-align: bottom; height: 50px"}
+    Share:
+    %a.twitter-btn{:href => 'http://www.twitter.com/share?url={{shoutoutUrl}}'}
+    %a.facebook-btn{:href => "https://www.facebook.com/sharer/sharer.php?u={{shoutoutUrl}}", :target => "_blank"}
+    %button.next-btn{"ng-click" => "startOver()"}New

@@ -1,9 +1,10 @@
+.h1 Connect with customers and drive traffic to your site
 %div{"so-ruler" => ''}
 .send-container
+  .h2 Send your ShoutOut
   .sender-details 
     Sender:
     %input.sender-name{"ng-model" => "senderName"}
-  %br
-  %button.send-btn{"ng-click" => "send()"}Send
-  %br  
-  %button.prev-btn{"ng-click" => "prev()"}Back   
+  .buttons
+    %button.next-btn{"ng-click" => "send()"}Next
+    %button.prev-btn{"ng-click" => "prev()"}Back   

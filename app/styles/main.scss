@@ -31,7 +31,6 @@ $preview-height: 735px;
 
 .h2 {
   font-size: 20px;
-  font-weight: light;
   color: #373737;
   padding-top: 57px;
   padding-bottom: 12px;
@@ -225,6 +224,37 @@ button.close {
 .complete-container {
   width: $container-width;
   margin: auto;
+  
+  .success {
+    text-align: center; 
+    padding-top: 60px; 
+    font-size: 40px; 
+    color: #6bb445
+  }
+  
+  .did-not-receive {
+    width: 300px;
+    font-size: 14px;
+    margin: auto;
+    text-align: center;
+    padding-top: 13px;
+  }
+  
+  .shoutout-link {
+    width: 630px;
+    height: 60px;
+    margin: auto;
+    margin-top: 90px;
+    padding-top: 20px;
+    border: 1px solid rgb(207,207,207);
+    border-radius: 3px;
+    text-align: center;
+    
+    .link {
+      display: block;
+      padding-top: 12px;
+    }
+  }
 }
 
 .landing {
@@ -275,6 +305,23 @@ button.close {
   cursor: pointer;
 }
 
+.twitter-btn {
+  background: url('/images/twitterIc.png') no-repeat;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.facebook-btn {
+  background: url('/images/fbIc.png') no-repeat;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
 .ruler {
   width: 840px;
   margin: auto;
@@ -283,6 +330,7 @@ button.close {
   .ruler-step {
     width: 210px;
     display: table-cell;
+    vertical-align: top;
     
     .step-btn {
       width: 35px;
