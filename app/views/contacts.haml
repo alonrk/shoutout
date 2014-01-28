@@ -8,7 +8,7 @@
   %br
   %input{:type => "checkbox", "ng-click" => "selectAll()", "ng-model" => "allSelected", :style => "margin-left: 100px"} Select All
   %br
-  .contacts
+  .contacts{:id => "contactsDiv", "ng-scroll-event" => "onContactsScroll($event, isEndEvent)"}
     %table
       %tr.contact{"ng-repeat" => "contact in contacts"}
         %td

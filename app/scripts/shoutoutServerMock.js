@@ -15,6 +15,10 @@ myAppDev.run(function($httpBackend) {
 		{name: 'alon', email: 'alonrk@gmail.com'},
 		{name: 'alon', email: 'alonrk@gmail.com'},
 		{name: 'alon', email: 'alonrk@gmail.com'},
+		{name: 'yuval', email: 'yuvala@wix.com'},
+		{name: 'yuval', email: 'yuvala@wix.com'},
+		{name: 'yuval', email: 'yuvala@wix.com'},
+		{name: 'yuval', email: 'yuvala@wix.com'},
 		{name: 'yuval', email: 'yuvala@wix.com'}
 	];
 	
@@ -33,7 +37,14 @@ myAppDev.run(function($httpBackend) {
 	}
  
 	// returns the current list of phones
-	$httpBackend.whenGET('/contacts').respond(contacts);
+	$httpBackend.whenGET(/contacts\?limit=.*&skip=.*/).respond(function(method, url, data) {
+		var skip = getUrlParam(url, 'skip');
+		var limit = getUrlParam(url, 'limit');
+		
+		var list = contacts.slice(skip, skip+limit);
+		
+		return [200, {total: contacts.length, contacts: list}];
+	});
  
 	// adds a new phone to the phones array
 	$httpBackend.whenPOST('/contacts').respond(function(method, url, data) {

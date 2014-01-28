@@ -2,13 +2,9 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('TemplateCtrl', function ($rootScope, $scope, $log, $state) {
-	if ($rootScope.messageData)
-	{
-		angular.element().ready(function() {
-			document.getElementById('youtubeDiv').innerHTML = "<iframe id='ytplayer' src='https://www.youtube.com/v/" + $rootScope.messageData.youtubeId + "' width='100%' height='300' style='border: 0'/>";
-		});
-	}
+shoutoutApp.controller('TemplateCtrl', function ($rootScope, $scope, $log, $state, $sce) {
+	if ($rootScope.messageData && $rootScope.messageData.youtubeId)
+		$scope.youtubeIFrame = $sce.trustAsHtml("<iframe id='ytplayer' src='https://www.youtube.com/embed/" + $rootScope.messageData.youtubeId + "' style='border: 0'/>");
 
 	$scope.prev = function() {
 		$state.go('message');

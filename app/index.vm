@@ -75,6 +75,7 @@
     <script src="scripts/controllers/complete.js"></script>
     <script src="scripts/controllers/landing.js"></script>
     <script src="scripts/directives/ruler.js"></script>
+    <script src="scripts/directives/ngScrollEvent.js"></script>
     <!-- endbuild -->
     
     <!-- #if (false) -->

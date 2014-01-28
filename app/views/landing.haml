@@ -4,4 +4,5 @@
   .img-div
     %img.msg-img{:src => "{{messageData.imageUrl}}"}
   %br
-  .img-div{:id => "youtubeDiv"}
+  .vid-div
+    %div{"ng-bind-html" => "youtubeIFrame"}
