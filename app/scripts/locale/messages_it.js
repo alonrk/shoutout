@@ -7,8 +7,11 @@ try {
 }
 angular.module('wixTranslations').config(function($translateProvider) {
   $translateProvider.translations({
-    "general": {
-      "YO": "Ciao"
+    "header": {
+      "TITLE": "Shoutout"
+    },
+    "footer": {
+      "GO": "Go!"
     }
   });
 });

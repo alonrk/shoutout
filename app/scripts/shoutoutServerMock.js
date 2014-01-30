@@ -64,9 +64,9 @@ myAppDev.run(function($httpBackend) {
 		// dummy id
 		var id = Math.round(+new Date()/1000).toString();
 		data.id = id;
-		sessionStorage[id] = data;
+		localStorage[id] = data;
 		
-		console.log('sessionStorage:' + sessionStorage[id]);
+		console.log('localStorage:' + localStorage[id]);
 		
 		return [200, {id: id}, {}];
 	});
@@ -76,9 +76,9 @@ myAppDev.run(function($httpBackend) {
 		if (!id)
 			return [404];
 		
-		console.log('sessionStorage:' + sessionStorage[id]);
+		console.log('localStorage:' + localStorage[id]);
 		
-		return [200, sessionStorage[id], {}];
+		return [200, localStorage[id], {}];
 	});
  
 	//------------------------ otherwise -----------------------------

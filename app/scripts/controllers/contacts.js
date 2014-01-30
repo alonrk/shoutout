@@ -2,11 +2,12 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log, Restangular, $compile) {
+shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log, Restangular) {
 	$rootScope.allSelected = false;
 	var _skip = 0;
 	var _limit = 10;
 	var _total = -1;
+	var _loading = false;
 	
 	var contactsApi = Restangular.one("contacts");
 	
@@ -34,7 +35,7 @@ shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log
 	};
 	
 	$scope.onContactsScroll = function(event, isEnd) {
-		if (_skip >= _total)
+		if (_skip >= _total || _loading)
 			return;
 		
 		var y = event.target.scrollTop;
@@ -56,10 +57,12 @@ shoutoutApp.controller('ContactsCtrl', function($scope, $rootScope, $state, $log
 	};
 	
 	function getContacts() {
+		_loading = true;
 		contactsApi.get({skip: _skip, limit: _limit}).then(function(result) {
 			$rootScope.contacts = $rootScope.contacts.concat(result.contacts); 
 			_skip += _limit;
 			_total = result.total;
+			_loading = false;
 		});
 	}
 });

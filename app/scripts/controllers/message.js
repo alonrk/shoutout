@@ -2,7 +2,9 @@
 
 var shoutoutApp = angular.module('shoutoutApp');
 
-shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $stateParams, $rootScope) {
+shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $stateParams, $rootScope, $translate) {
+    $scope.helloMessage = $translate('general.YO');
+
 	if (!$rootScope.messageData)
 	{
 		$rootScope.messageData = {
@@ -77,5 +79,5 @@ shoutoutApp.controller('MessageCtrl', function ($scope, $log, $state, $statePara
   	  	var id = url.match('[\\?&]v=([^&#]*)');
     	id = id[1];
     	return id;
-   	};
+   	}
 });
